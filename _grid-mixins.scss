@@ -6,12 +6,18 @@ $grid-columns: 12 !default;
 
 $grid-class-separator: "-" !default;
 
-@mixin grid-row {
-  position: relative;
+@mixin grid-clearfix {  
+  position: relative;  
   &:after {
     content: "";
     display: table;
     clear: both;
+  }  
+}
+
+@mixin grid-row {
+  .row {
+    @include grid-clearfix;
   }
 }
 
@@ -107,7 +113,7 @@ $grid-class-separator: "-" !default;
 }
 
 @mixin grid-system($cols: $grid-columns) {
-  @include grid-container;
+  @include grid-row();
   @include grids($cols);
   @include grid-prefixes($cols);
   @include grid-suffixes($cols);

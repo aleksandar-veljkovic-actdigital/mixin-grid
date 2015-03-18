@@ -1,0 +1,14 @@
+$media-large: 768px;
+
+@import './grid-mixins';
+
+//small
+@include grids;
+
+// large
+@media (min-width: #{$media-large}) { 
+  $grid-class-separator: "-large-";
+  @include grid-system;
+}
+
+

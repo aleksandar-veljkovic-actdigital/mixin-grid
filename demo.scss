@@ -1,0 +1,27 @@
+@import './grid';
+
+body {
+  margin: 0;
+}
+body * {
+  box-sizing: border-box;
+  
+}
+
+
+.grid-example {
+  background-color: #ddd;
+  .row {  
+    //padding: 1rem;    
+    & > * {
+      background-color: #5555ff;
+      text-align: center;
+      padding: 1em 0;
+      margin-bottom: 1em;
+      margin-top: 1em;
+      & > * {
+        background-color: #7777ff;
+      }
+    }
+  }
+}
